@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios</title>
+</head>
+
+<body>
+  <script>
+    /*
+
+    1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+    */
+
+    /* function contarCaracteres(cadena=""){
+      if (!cadena) {
+        console.warn("No ingresaste ninguna cadena");
+      } else {
+        console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`)
+      }
+    } 
+    */
+
+    /* const contarCaracteres = (cadena = "") =>
+      (!cadena)
+        ? console.warn("No ingresaste ninguna cadena")
+        : console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`);
+ */
+    //contarCaracteres();
+    //contarCaracteres("hola");
+
+
+    /*
+        2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+        */
+
+    /* const recortarTexto = (cadena = "", longitud = undefined) =>
+      (!cadena)
+        ? console.warn("No ingresaste una cadena de texto")
+        : (longitud === undefined)
+          ? console.warn("No ingresaste la longitud para recortar el texto")
+          : console.info(cadena.slice(0, longitud));
+ */
+    //recortarTexto("hola mundo", 7);
+    //recortarTexto();
+    //recortarTexto("hola mundo");
+    //recortarTexto("",5);
+
+    /*
+    3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+    */
+
+    /* const cadenaAArreglo = (cadena = "", separador = undefined) =>
+      (!cadena)
+        ? console.warn("No ingresaste una cadena de texto")
+        : (separador === undefined)
+          ? console.warn("No ingresaste un caracter separador")
+          : console.info(cadena.split(separador)); */
+
+    //cadenaAArreglo("Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsa corrupti sapiente quae quibusdam voluptates ex inventore nemo non est omnis vitae consectetur architecto ullam officia, laborum ipsum iure minus.", " ");
+    //cadenaAArreglo();
+    //cadenaAArreglo("hola mundo");
+    //adenaAArreglo("",".");
+
+
+
+
+
+    /*
+        4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+    */
+
+    /* const repetirTexto = (texto = "", veces = undefined) => {
+      if (!texto) return console.warn("No ingresaste un texto");
+      if (veces === undefined) return console.warn("No ingresaste el numero de veces a repetir el texto");
+      if (veces === 0) return console.error("El numero de veces no puede ser negativo");
+
+      for (let i = 0; i < veces; i++)console.info(`${texto}, ${i}`)
+    } */
+
+    //repetirTexto("Hola Mundo", 0);
+    //repetirTexto("Hola Mundo", 3);
+    //repetirTexto("Hola Mundo", -20);
+    //repetirTexto("", 3);
+    //repetirTexto("Hola Mundo");
+
+
+
+    /*
+    5) Programa una funcion que invierta las palabras de una cadena de texto, pr.miFuncion("Hola Mundo") devolvera "odnuM aloH"
+    */
+
+    /*  const invertirCadena = (cadena = "") =>
+      (!cadena)
+        ? console.warn("no ingresaste una cadena")
+         : console.info(cadena.split("").reverse().join("")); */
+
+    //invertirCadena();
+    //invertirCadena("hola mundo");
+    //invertirCadena("javascrip es un lenguaje web");
+    //invertirCadena("corre perra");
+
+    /*
+    6) Programa una funcion para contar el numero de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adio mundo", "mundo") devolvera 2
+    */
+
+    const textoEnCadena = (cadena = "", texto = "") => {
+      if (!cadena) return console.warn("no ingresaste el texto largo");
+      if (!cadena) return console.warn("no ingresaste la palabra a evaluar");
+
+      let i = 0,
+        contador = 0;
+
+      while (i !== -1) {
+        i = cadena.indexOf(texto, i);
+        if (i !== -1) {
+          i++;
+          contador;
+        }
+      }
+      return console.info(`la palabra ${texto} se repite ${contador} veces`)
+    }
+
+    textoEnCadena();
+    textoEnCadena("", "mundo");
+    textoEnCadena("hola mundo ", "");
+    textoEnCadena("hola mundo", "mundo");
+
+
+    /*
+    7) Programa una funcion que valide si una palabra o frase dada, es un palindromo (que se lee igual en ambos sentidos) pe. miFuncion ("salas") devolvera true
+    */
+
+    const palindromo = (palabra = "") => {
+      if (!palabra) return console.warn("no ingresaste una palabra o frase");
+
+      palabra = palabra.toLowerCase();
+      let alReves = palabra.split("").reverse().join("");
+
+      return (palabra === alReves)
+        ? console.info(`si es palindromo, palabra original ${palabra}, palabra al reves ${alReves}`)
+        : console.info(`no es palindromo, palabra original ${palabra}, palabra al reves ${alReves}`)
+    }
+
+    palindromo();
+    palindromo("hola mundo");
+    palindromo("SAlas");
+
+
+    /*
+    8) Programa una funcion que elimine cierto patron de caracteres de un texto dado, pe. miFuncion ("xyz1, xyz2, xyz3, xyz4, xyz5", "xyz") devolvera "1, 2, 3, 4 y 5"
+    */
+
+    const eliminarCaracteres = (texto = "", patron = "") =>
+      (!texto)
+        ? console.warn("no ingresaste un texto")
+        : (!patron)
+          ? console.warn("no ingresaste un patron de caracteres")
+          : console.info(texto.replace(new RegExp(patron, "ig"), ""));
+
+    eliminarCaracteres();
+    eliminarCaracteres("xyz1, xyz2, xyz3, xyz4, xyz5");
+    eliminarCaracteres("xyz1, xyz2, xyz3, xyz4, xyz5");
+
+    /*
+    
+      9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+    
+      10) Programa una función que reciba un número y evalúe si es capicúa o no(que se lee igual en un sentido que en otro), pe.miFuncion(2002) devolverá true.
+    
+    11) Programa una función que calcule el factorial de un número(El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe.miFuncion(5) devolverá 120.
+    
+    */
+
+  </script>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsa corrupti sapiente quae quibusdam
+    voluptates ex inventore nemo non est omnis vitae consectetur architecto ullam officia, laborum ipsum iure minus.</p>
+</body>
+
+</html>

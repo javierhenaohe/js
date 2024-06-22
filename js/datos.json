@@ -1,0 +1,11 @@
+{
+  "cadena": "Javier",
+  "numero": "35",
+  "booleano": true,
+  "arreglo": ["correr", "programar", "cocinar"],
+  "objeto": {
+    "x": "@jhh",
+    "email": "javier.henao@outlook.com"
+  },
+  "nulo": null
+}
