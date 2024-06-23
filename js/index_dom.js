@@ -1,15 +1,17 @@
-import scrollTopButton from "./dom/boton_scroll.js";
+import hamburguerMenu from "./dom/menu_hamburguesa.js";
+import { digitalClock, alarm } from "./dom/reloj.js";
+import { moveBall, shortcuts } from "./dom/teclado.js";
 import countdown from "./dom/cuenta_regresiva.js";
+import scrollTopButton from "./dom/boton_scroll.js";
+import darkTheme from "./dom/tema_oscura.js";
+import responsiveMedia from "./dom/objeto_responsive.js";
+import reponsiveTester from "./dom/prueba_responsive.js";
 import userDeviceInfo from "./dom/deteccion_dispositivos.js";
 import networkStatus from "./dom/deteccion_red.js";
 import webCam from "./dom/deteccion_webcam.js";
-import hamburguerMenu from "./dom/menu_hamburguesa.js";
-import responsiveMedia from "./dom/objeto_responsive.js";
-import reponsiveTester from "./dom/prueba_responsive.js";
-import { digitalClock, alarm } from "./dom/reloj.js";
-import darkTheme from "./dom/tema_oscura.js";
+import getGeolocation from "./dom/geolocalizacion .js";
+
 /* import { shortcuts } from "./dom/teclado.js"; */
-//import { shortcuts } from "./dom/teclado.js";
 //import { moveBall } from "./dom/moveBall.js";
 
 const d = document;
@@ -38,6 +40,8 @@ d.addEventListener("DOMContentLoaded", (e) => {
   userDeviceInfo("user-device");
 
   webCam("webcam");
+
+  getGeolocation("geolocation");
 });
 
 d.addEventListener("keydown", (e) => {
