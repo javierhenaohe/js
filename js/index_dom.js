@@ -4,12 +4,15 @@ import { moveBall, shortcuts } from "./dom/teclado.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import scrollTopButton from "./dom/boton_scroll.js";
 import darkTheme from "./dom/tema_oscura.js";
-import responsiveMedia from "./dom/objeto_responsive.js";
+import responsiveMedia from "./dom/responsiveMedia.js";
 import reponsiveTester from "./dom/prueba_responsive.js";
 import userDeviceInfo from "./dom/deteccion_dispositivos.js";
 import networkStatus from "./dom/deteccion_red.js";
 import webCam from "./dom/deteccion_webcam.js";
 import getGeolocation from "./dom/geolocalizacion .js";
+import searchFilters from "./dom/filtro_busquedas.js";
+import draw from "./dom/sorteo.js";
+import slider from "./dom/carrusel.js";
 
 /* import { shortcuts } from "./dom/teclado.js"; */
 //import { moveBall } from "./dom/moveBall.js";
@@ -42,6 +45,12 @@ d.addEventListener("DOMContentLoaded", (e) => {
   webCam("webcam");
 
   getGeolocation("geolocation");
+
+  searchFilters(".card-filter", ".card");
+
+  draw("#winner-btn", ".player");
+
+  slider();
 });
 
 d.addEventListener("keydown", (e) => {
